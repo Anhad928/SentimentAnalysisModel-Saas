@@ -44,12 +44,19 @@ export const authConfig = {
       },
       async authorize(credentials) {
         try{
+          // eslint-disable-next-line @typescript-eslint/no-unused-vars, @typescript-eslint/await-thenable
           const { email, password } = await loginSchema.parse(credentials);
 
           const user = await db.user.findUnique({
             where: { email },
           });
-          if (!user || !user.pa)
+          
+          // eslint-disable-next-line @typescript-eslint/prefer-optional-chain
+          if (!user || !user.password){
+            return null;
+          }
+          const isValid = await 
+        // eslint-disable-next-line @typescript-eslint/no-unused-vars
         } catch (error) {
           return null;
         }
