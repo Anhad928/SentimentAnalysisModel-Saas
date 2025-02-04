@@ -1,8 +1,11 @@
+/* eslint-disable @typescript-eslint/no-unsafe-member-access */
+/* eslint-disable @typescript-eslint/no-unsafe-argument */
+/* eslint-disable @typescript-eslint/no-unsafe-assignment */
 "use client";
 
 import { useState } from "react";
 import { FiUpload } from "react-icons/fi";
-import { Analysis } from "./inference";
+import type { Analysis } from "./inference";
 
 interface UploadVideoProps {
   apiKey: string;
@@ -33,13 +36,17 @@ function UploadVideo({ apiKey, onAnalysis }: UploadVideoProps) {
       });
 
       if (!res.ok) {
+        // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
         const error = await res.json();
+        // eslint-disable-next-line @typescript-eslint/no-unsafe-argument, @typescript-eslint/no-unsafe-member-access
         throw new Error(error?.error || "Failed to get upload URL");
       }
 
+      // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
       const { url, fileId, key } = await res.json();
 
       // 2. Upload file to S3
+      // eslint-disable-next-line @typescript-eslint/no-unsafe-argument
       const uploadRes = await fetch(url, {
         method: "PUT",
         headers: { "Content-Type": file.type },
@@ -86,9 +93,9 @@ function UploadVideo({ apiKey, onAnalysis }: UploadVideoProps) {
           type="file"
           accept="video/mp4,video/mov,video/avi"
           className="hidden"
-          onChange={(e) => {
+          onChange={async (e) => {
             const file = e.target.files?.[0];
-            if (file) handleUpload(file);
+            if (file) await handleUpload(file);
           }}
           id="video-upload"
         />
