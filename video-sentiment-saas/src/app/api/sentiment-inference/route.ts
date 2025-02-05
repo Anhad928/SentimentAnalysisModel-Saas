@@ -1,3 +1,6 @@
+/* eslint-disable @typescript-eslint/no-unsafe-argument */
+/* eslint-disable @typescript-eslint/no-unsafe-member-access */
+/* eslint-disable @typescript-eslint/no-unsafe-call */
 /* eslint-disable @typescript-eslint/no-unsafe-assignment */
 import { PutObjectCommand, S3Client } from "@aws-sdk/client-s3";
 import {
@@ -81,7 +84,7 @@ export async function POST(req: Request) {
       EndpointName: env.AWS_ENDPOINT_NAME,
       ContentType: "application/json",
       Body: JSON.stringify({
-        video_path: `s3://your-bucket-name/${key}`,
+        video_path: `s3://sentiment-analysis-saas-ml/${key}`,
       }),
     });
 
