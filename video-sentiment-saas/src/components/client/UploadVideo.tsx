@@ -112,7 +112,7 @@ function UploadVideo({ apiKey, onAnalysis }: UploadVideoProps) {
                 : "Upload a video"}
           </h3>
           <p className="text-center text-xs text-gray-500">
-            Get started with sentiment detection by uploading a video.
+            Get started with sentiment detection by uploading a video. Only .mp4 files supported. Max file size: 50MB
           </p>
         </label>
       </div>
