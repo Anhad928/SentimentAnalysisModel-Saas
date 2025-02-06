@@ -5,7 +5,7 @@
 
 import { useState } from "react";
 import { FiUpload } from "react-icons/fi";
-import type { Analysis } from "./inference";
+import type { Analysis } from "./Inference";
 
 interface UploadVideoProps {
   apiKey: string;

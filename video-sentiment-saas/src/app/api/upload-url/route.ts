@@ -10,6 +10,7 @@ export async function POST(req: Request) {
   try {
     // Get API key from the header
     const apiKey = req.headers.get("Authorization")?.replace("Bearer ", "");
+    console.log("API key: ", apiKey);
     if (!apiKey) {
       return NextResponse.json({ error: "API key required" }, { status: 401 });
     }
