@@ -4,7 +4,7 @@
 
 Friends Sentiment Analyzer Frontend is a modern, responsive web application that allows users to interact with an AI-driven sentiment analysis model. Built with React.js, Tailwind CSS, the T3 Stack, and TypeScript, the application provides a seamless experience for analyzing sentiment from scene cuts inspired by *Friends*. This frontend integrates with an AI model trained in a separate repository using AWS SageMaker and PyTorch.
 
-For details about model training and the underlying AI pipeline, please refer to our [Friends Sentiment Analysis Model Training](https://github.com/yourusername/friends-sentiment-model) repository.
+For details about model training and the underlying AI pipeline, please refer to our [Friends Sentiment Analysis Model Training](https://github.com/Anhad928/SentimentAnalysisModel-AWS) repository.
 
 
 ## Features
@@ -38,14 +38,14 @@ The frontend is designed as the user interface layer of a full-stack sentiment a
 - **API Communication:**  
   Communicates with backend APIs to handle user authentication and retrieve sentiment analysis results.
 - **Model Integration:**  
-  Leverages the AI model trained on AWS SageMaker, detailed in the [Model Training Repository](https://github.com/yourusername/friends-sentiment-model).
+  Leverages the AI model trained on AWS SageMaker, detailed in the [Model Training Repository](https://github.com/Anhad928/SentimentAnalysisModel-AWS).
 - **State Management & Routing:**  
   Managed using Next.js and the T3 Stack for robust client-side operations.
 
 ## Installation & Setup
 
 ### Prerequisites
-- Node.js (v14+)
+- Node.js (v15)
 - npm or yarn
 - Git
 
