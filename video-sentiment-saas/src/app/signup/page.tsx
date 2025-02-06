@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
 /* eslint-disable @typescript-eslint/no-unsafe-member-access */
 "use client";
 
@@ -8,7 +9,8 @@ import { useRouter } from "next/navigation";
 import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { registerUser } from "~/actions/auth";
-import { signupSchema, SignupSchema } from "~/schemas/auth";
+import { signupSchema } from "~/schemas/auth";
+import type { SignupSchema } from "~/schemas/auth";
 
 export default function SignupPage() {
   const router = useRouter();
