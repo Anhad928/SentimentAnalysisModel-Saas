@@ -2,13 +2,10 @@
 /* eslint-disable @typescript-eslint/no-unsafe-member-access */
 /* eslint-disable @typescript-eslint/no-unsafe-call */
 /* eslint-disable @typescript-eslint/no-unsafe-assignment */
-import { PutObjectCommand, S3Client } from "@aws-sdk/client-s3";
 import {
   InvokeEndpointCommand,
-  SageMakerRuntime,
   SageMakerRuntimeClient,
 } from "@aws-sdk/client-sagemaker-runtime";
-import { getSignedUrl } from "@aws-sdk/s3-request-presigner";
 import { NextResponse } from "next/server";
 import { env } from "~/env";
 import { checkAndUpdateQuota } from "~/lib/quota";
