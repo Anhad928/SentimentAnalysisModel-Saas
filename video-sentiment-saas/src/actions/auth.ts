@@ -1,7 +1,8 @@
 "use server";
 
 import { hash } from "bcryptjs";
-import { signupSchema, SignupSchema } from "~/schemas/auth";
+import { signupSchema } from "~/schemas/auth";
+import type { SignupSchema } from "~/schemas/auth";
 import { db } from "~/server/db";
 import crypto from "crypto";
 
@@ -40,6 +41,7 @@ export async function registerUser(data: SignupSchema) {
     });
 
     return { success: true };
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   } catch (error) {
     return { error: "Something went wrong" };
   }
